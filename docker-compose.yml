@@ -1,0 +1,18 @@
+# https://masanyon.com/docker-react-typescript-env/
+# docker-compose run sh -cで一旦コマンドを上書きしてcreate-react-appをしている
+
+# docker-compose build
+# docker-compose run --rm frontend sh -c 'npx create-react-app task-app'
+# docker-compose up
+version: '3'
+services:
+  frontend:
+    build: .
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/usr/src/app
+    command: sh -c 'cd task-app && yarn start'
+    ports:
+      - 3000:3000
+    tty: true
