@@ -28,7 +28,7 @@ function App() {
   return (
     <div>
       <DragDropContext>
-        <Droppable droppableId="dropppable">
+        <Droppable droppableId="droppable">
           {(provided, snapshot) => (
             <div {...provided.droppableProps} ref={provided.innerRef}>
               {items.map((item, index) => (
